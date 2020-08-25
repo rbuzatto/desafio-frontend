@@ -1,0 +1,13 @@
+.page {
+  background-color: $color-white;
+  border-radius   : $border-radius;
+  box-shadow      : $box-shadow;
+  margin-top      : 2rem;
+  padding         : 2rem;
+  margin-bottom   : 3rem;
+  min-height: calc(100vh - 9rem);
+
+  &__content {
+    border-top: $border;
+  }
+}

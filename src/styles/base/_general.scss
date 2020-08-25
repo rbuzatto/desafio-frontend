@@ -1,0 +1,10 @@
+:root {
+  --app-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: $color-white-98;
+  min-height: 100vh;
+  color: $color-font;
+}
