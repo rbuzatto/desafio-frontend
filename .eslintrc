@@ -9,11 +9,11 @@
     "react/display-name": 1,
     "no-unused-vars": "warn",
     "no-console": 1,
-    "no-unexpected-multiline": "warn",
-    "react/react-in-jsx-scope": "off"
+    "no-unexpected-multiline": "warn"
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   }
 }

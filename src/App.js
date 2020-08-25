@@ -1,7 +1,10 @@
 import React from 'react'
+import NavBar from 'containers/NavBar'
 
-const App = () => {
-  return <div className="App">Base Start</div>
-}
+const App = () => (
+  <div className="App">
+    <NavBar />
+  </div>
+)
 
 export default App
