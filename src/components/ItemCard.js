@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useCallback } from 'react'
 import { ADD_TO_CART, SUBTRACT_FROM_CART, REMOVE_FROM_CART } from 'constants/index'
 import { CartContext, ProductsContext } from 'App'
 import PropTypes from 'prop-types'
@@ -13,11 +13,18 @@ const ItemCard = ({ productId, quantity }) => {
   const { dispatch } = useContext(CartContext)
   const { products } = useContext(ProductsContext)
 
-  const product = products.find(({ productID }) => productID === productId)
+  const product = useCallback(
+    products.find(({ productID }) => productID === productId),
+    [products],
+  )
 
-  const addToCart = () => dispatch({ type: ADD_TO_CART, productId })
-  const subtractFromCart = () => dispatch({ type: SUBTRACT_FROM_CART, productId })
-  const removeFromCart = () => dispatch({ type: REMOVE_FROM_CART, productId })
+  const addToCart = useCallback(() => dispatch({ type: ADD_TO_CART, productId }), [productId])
+  const subtractFromCart = useCallback(() => dispatch({ type: SUBTRACT_FROM_CART, productId }), [
+    productId,
+  ])
+  const removeFromCart = useCallback(() => dispatch({ type: REMOVE_FROM_CART, productId }), [
+    productId,
+  ])
   return (
     <ListItem className={classes.root}>
       <ListItemText
