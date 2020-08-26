@@ -1,7 +1,8 @@
 import React from 'react'
+import ProductCardList from 'components/ProductCardList'
 
 const Products = () => {
-  return <div>Products</div>
+  return <ProductCardList />
 }
 
 export default Products
