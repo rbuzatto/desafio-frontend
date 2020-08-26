@@ -19,6 +19,7 @@ const useStyles = makeStyles(() => ({
   pageHeader: {
     borderBottom: '1px solid #e8e8e8',
     paddingBottom: 8,
+    marginBottom: 24,
   },
 }))
 
