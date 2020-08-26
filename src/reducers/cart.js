@@ -14,23 +14,28 @@ const cartReducer = (state = initialState, { type, productId }) => {
       const itemsIds = state.itemsIds.includes(productId)
         ? state.itemsIds
         : [...state.itemsIds, productId]
+
       const nextState = { itemsIds, quantityById }
       setCachedValue('cart', nextState)
       return nextState
     }
     case SUBTRACT_FROM_CART: {
       const quantity = state.quantityById[productId] > 0 ? --state.quantityById[productId] : 0
+
       if (quantity === 0) {
         const itemsIds = state.itemsIds.filter(id => id !== productId)
         const { [productId]: _, ...quantityById } = state.quantityById
+
         const nextState = { itemsIds, quantityById }
         setCachedValue('cart', nextState)
         return nextState
       }
+
       const quantityById = { ...state.quantityById, [productId]: quantity }
       const itemsIds = state.itemsIds.includes(productId)
         ? state.itemsIds
         : [...state.itemsIds, productId]
+
       const nextState = { itemsIds, quantityById }
       setCachedValue('cart', nextState)
       return nextState
@@ -38,6 +43,7 @@ const cartReducer = (state = initialState, { type, productId }) => {
     case REMOVE_FROM_CART: {
       const itemsIds = state.itemsIds.filter(id => id !== productId)
       const { [productId]: _, ...quantityById } = state.quantityById
+
       const nextState = { itemsIds, quantityById }
       setCachedValue('cart', nextState)
       return nextState
