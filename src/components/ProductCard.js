@@ -49,12 +49,12 @@ const ProductCard = props => {
 }
 
 ProductCard.propTypes = {
-  name: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  unitPrice: PropTypes.number,
-  productID: PropTypes.number,
-  unitsInStock: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  unitPrice: PropTypes.number.isRequired,
+  productID: PropTypes.number.isRequired,
+  unitsInStock: PropTypes.number.isRequired,
 }
 
 const useStyles = makeStyles(() => ({

@@ -55,8 +55,8 @@ const ItemCard = ({ productId, quantity }) => {
 }
 
 ItemCard.propTypes = {
-  productId: PropTypes.number,
-  quantity: PropTypes.number,
+  productId: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
 }
 
 export default ItemCard
