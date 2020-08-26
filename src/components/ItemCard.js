@@ -18,12 +18,17 @@ const ItemCard = ({ productId, quantity }) => {
     [products],
   )
 
-  const addToCart = useCallback(() => dispatch({ type: ADD_TO_CART, productId }), [productId])
+  const addToCart = useCallback(() => dispatch({ type: ADD_TO_CART, productId }), [
+    productId,
+    dispatch,
+  ])
   const subtractFromCart = useCallback(() => dispatch({ type: SUBTRACT_FROM_CART, productId }), [
     productId,
+    dispatch,
   ])
   const removeFromCart = useCallback(() => dispatch({ type: REMOVE_FROM_CART, productId }), [
     productId,
+    dispatch,
   ])
   return (
     <ListItem className={classes.root}>
