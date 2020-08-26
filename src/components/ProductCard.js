@@ -21,7 +21,7 @@ const ProductCard = props => {
   return (
     <Card className={classes.root}>
       <CardMedia className={classes.media} image={image} title={name} />
-      <CardContent>
+      <CardContent className={classes.content}>
         <Typography variant="h5" color="textSecondary">
           {name}
         </Typography>
@@ -71,6 +71,12 @@ const useStyles = makeStyles(() => ({
   media: {
     height: 0,
     paddingTop: '56.25%',
+  },
+  content: {
+    minHeight: 156,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
 }))
 
