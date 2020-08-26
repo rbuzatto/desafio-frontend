@@ -23,6 +23,8 @@ const ItemCardList = () => {
     if (!products.length) return
     return itemsIds.map(id => <ItemCard productId={id} quantity={quantityById[id]} key={id} />)
   }
+
+  if (!products.length) return <></>
   return (
     <>
       <List className={classes.root}>{renderItems()}</List>
