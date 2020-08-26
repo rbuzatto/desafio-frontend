@@ -20,8 +20,12 @@ const ItemCard = ({ productId, quantity }) => {
   const removeFromCart = () => dispatch({ type: REMOVE_FROM_CART, productId })
   return (
     <ListItem className={classes.root}>
-      <ListItemText primary={product.name} secondary={product.unitsInStock} />
-      <ListItemText primary={`Price: $${product.unitPrice}`} />
+      <ListItemText
+        primary={product.name}
+        secondary={product.unitsInStock}
+        className={classes.description}
+      />
+      <ListItemText primary={`Price: $${product.unitPrice}`} className={classes.price} />
       <div className={classes.quantityAction}>
         <ListItemText primary={quantity} className={classes.quantity} />
         <ButtonGroup
@@ -38,6 +42,7 @@ const ItemCard = ({ productId, quantity }) => {
           </Button>
         </ButtonGroup>
       </div>
+      <Button onClick={removeFromCart}>X</Button>
     </ListItem>
   )
 }
@@ -54,6 +59,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     '& > *': {
       margin: theme.spacing(1),
+      flexGrow: 0,
     },
   },
   button: {
@@ -67,5 +73,11 @@ const useStyles = makeStyles(theme => ({
   quantity: {
     width: 32,
     textAlign: 'center',
+  },
+  description: {
+    width: 290,
+  },
+  price: {
+    width: 104,
   },
 }))
