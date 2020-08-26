@@ -22,11 +22,11 @@ const App = () => {
         <Router>
           <div className="app">
             <NavBar />
-            <div className="container page">
-              <Switch>
-                <Route exact path="/">
-                  <Home />
-                </Route>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <div className="container page">
                 <Route path="/products">
                   <Products />
                 </Route>
@@ -36,8 +36,8 @@ const App = () => {
                 <Route path="/cart">
                   <Cart />
                 </Route>
-              </Switch>
-            </div>
+              </div>
+            </Switch>
           </div>
         </Router>
       </CartContext.Provider>
