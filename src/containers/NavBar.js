@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import clsx from 'clsx'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -8,7 +9,6 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import MenuIcon from '@material-ui/icons/Menu'
 import Close from '@material-ui/icons/Close'
 import Link from '@material-ui/core/Link'
-import classNames from 'classnames/bind'
 import { NavLink as RouterLink } from 'react-router-dom'
 
 const linksValues = [
@@ -28,7 +28,6 @@ const linksValues = [
 
 const NavBar = () => {
   const classes = useStyles()
-  const cx = classNames.bind(classes)
   const [menuOpen, setMenuOpen] = useState(false)
   let anchorElm = null
 
@@ -47,7 +46,7 @@ const NavBar = () => {
         onClick={closeMenu}
         activeStyle={{ color: '#ff46e7' }}
         style={{ transitionDelay: `${idx * 40}ms` }}
-        className={cx(classes.menuLink, { [classes.menuLinkShow]: menuOpen })}
+        className={clsx(classes.menuLink, { [classes.menuLinkShow]: menuOpen })}
         to={to}
         color="inherit"
       >
@@ -67,8 +66,8 @@ const NavBar = () => {
             color="inherit"
             aria-label="menu"
           >
-            <Close className={cx({ [classes.hide]: !menuOpen })} />
-            <MenuIcon className={cx({ [classes.hide]: menuOpen })} />
+            <Close className={clsx({ [classes.hide]: !menuOpen })} />
+            <MenuIcon className={clsx({ [classes.hide]: menuOpen })} />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             <Link component={RouterLink} to="/">
@@ -78,7 +77,7 @@ const NavBar = () => {
           <ClickAwayListener onClickAway={handleClickAway}>
             <div
               id="menu-list"
-              className={cx(classes.menuList, { [classes.menuListShow]: menuOpen })}
+              className={clsx(classes.menuList, { [classes.menuListShow]: menuOpen })}
             >
               {renderLinks()}
             </div>
