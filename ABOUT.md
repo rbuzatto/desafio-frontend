@@ -2,6 +2,8 @@
 
 This project is created with React hooks, along Material UI as base design system. It uses the Context React API to provide products and basket state to different views.
 
+It uses husky library to run eslint before before commits in effort to maintain code quality.
+
 ## Features
 
 - caches user's basket on browser
