@@ -6,12 +6,12 @@ import { makeStyles } from '@material-ui/core/styles'
 const TopProducts = () => {
   const classes = useStyles()
   return (
-    <>
+    <div className="container page">
       <Typography className={classes.pageHeader} variant="h4" color="textSecondary">
         Here are the exclusive Top 5!
       </Typography>
       <ProductCardList count={5} filter="unitPrice" order="desc" />
-    </>
+    </div>
   )
 }
 

@@ -6,12 +6,12 @@ import { makeStyles } from '@material-ui/core/styles'
 const Products = () => {
   const classes = useStyles()
   return (
-    <>
+    <div className="container page">
       <Typography className={classes.pageHeader} variant="h4" color="textSecondary">
         All Products For You!
       </Typography>
       <ProductCardList />
-    </>
+    </div>
   )
 }
 

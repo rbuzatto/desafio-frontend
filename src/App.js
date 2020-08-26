@@ -26,17 +26,15 @@ const App = () => {
               <Route exact path="/">
                 <Home />
               </Route>
-              <div className="container page">
-                <Route path="/products">
-                  <Products />
-                </Route>
-                <Route path="/top-products">
-                  <TopProducts />
-                </Route>
-                <Route path="/cart">
-                  <Cart />
-                </Route>
-              </div>
+              <Route path="/products">
+                <Products />
+              </Route>
+              <Route path="/top-products">
+                <TopProducts />
+              </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
             </Switch>
           </div>
         </Router>
