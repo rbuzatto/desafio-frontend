@@ -10,8 +10,8 @@ const ProductCardList = () => {
 
   const renderProducts = () => {
     if (!products.length) return
-    return products.map(({ productID, ...product }) => (
-      <Grid item xs={12} sm={6} md={4} key={productID}>
+    return products.map(product => (
+      <Grid item xs={12} sm={6} md={4} key={product.productID}>
         <ProductCard {...product} />
       </Grid>
     ))
